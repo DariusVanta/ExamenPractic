@@ -4,14 +4,14 @@ public class Car extends Entity {
 
     private String model;
     private double mileageAcquisition;
-    private double daysRent;
+    private double dayRentPrice;
 
 
-    public Car(String id, String model, double mileageAcquisition, double daysRent) {
+    public Car(String id, String model, double mileageAcquisition, double dayRentPrice) {
         super(id);
         this.model = model;
         this.mileageAcquisition = mileageAcquisition;
-        this.dayRent = daysRent;
+        this.dayRentPrice = dayRentPrice;
     }
     public String getModel() {
         return model;
@@ -21,12 +21,12 @@ public class Car extends Entity {
         return mileageAcquisitiont;
     }
 
-    public double getDaysRent() {
-        return daysRent;
+    public double getDayRentPrice() {
+        return dayRentPrice;
     }
 
-    public void setDaysRent(double DaysRent) {
-        this.daysRent= daysRent;
+    public void setDayRentPrice(double DayRentPrice) {
+        this.dayRentPrice = dayRentPrice;
     }
 
     public void setModel(String model) {
@@ -42,7 +42,7 @@ public class Car extends Entity {
         return "Car{" +
                 "model=" + model +
                 "with mileage on Acquisition='" + mileageAcquisition + '\'' +
-                " have a rent per day ='" + dayRent + '\'' +
+                " have a rent price per day ='" + dayRentPrice + '\'' +
                 '}';
     }
 }

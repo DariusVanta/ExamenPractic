@@ -12,11 +12,11 @@ public class CarValidator {
             throw new RuntimeException("Insert a valid ID.");
         }
 
-        if (car.isLeftService() && car.getMileageAcquisition() <= 0) {
+        if (car.getMileageAcquisition() <= 0) {
             throw new RuntimeException("Mileage on Acquisition must be positive!");
         }
-        if (car.getDaysRent() < 0) {
-            throw new RuntimeException("Rent Days must be positive and minimum a day!");
+        if (car.getDayRentPrice() < 0) {
+            throw new RuntimeException("Rent price per Day must be positive!");
         }
 
     }
