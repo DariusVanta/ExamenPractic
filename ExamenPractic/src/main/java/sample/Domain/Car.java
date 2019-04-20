@@ -3,41 +3,34 @@ package sample.Domain;
 public class Car extends Entity {
 
     private String model;
+    private double mileageAcquisition;
+    private double dayRent;
 
 
-    private double sum;
-    private String description;
-    private String date;
-
-    public Car(String id, String model, double sum, String description, String date) {
+    public Car(String id, String model, double mileageAcquisition, double dayRent) {
         super(id);
         this.model = model;
-
-
-
-        this.sum = sum;
-        this.description = description;
-        this.date = date;
+        this.mileageAcquisition = mileageAcquisition;
+        this.dayRent = dayRent;
+    }
+    public String getModel() {
+        return model;
     }
 
-    public double getSum() {
-        return sum;
+    public double getMileageAcquisition() {
+        return mileageAcquisitiont;
     }
 
-    public String getDescription() {
-        return description;
+    public double getDayRent() {
+        return dayRent;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    @Override
+      @Override
     public String toString() {
         return "Car{" +
-                "sum=" + sum +
-                ", description='" + description + '\'' +
-                ", date='" + date + '\'' +
+                "model=" + model +
+                "with mileage on Acquisition='" + mileageAcquisition + '\'' +
+                " have a rent per day ='" + dayRent + '\'' +
                 '}';
     }
 }
