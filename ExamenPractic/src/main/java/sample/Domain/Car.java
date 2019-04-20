@@ -25,6 +25,7 @@ public class Car extends Entity {
         return dayRent;
     }
 
+
       @Override
     public String toString() {
         return "Car{" +
