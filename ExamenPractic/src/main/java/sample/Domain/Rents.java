@@ -19,8 +19,8 @@ public class Rents extends Entity {
     }
 
 
-    public String getModel() {
-        return model;
+    public String getCarId() {
+        return carId;
     }
 
     public double getMileage() {
@@ -29,6 +29,19 @@ public class Rents extends Entity {
 
     public double getRentDays() {
         return RentDays;
+    }
+
+
+    public void setMileage(double mileage) {
+        this.mileage= mileage;
+    }
+
+    public void setCarId(String carId) {
+        this.carId = carId;
+    }
+
+    public void setRentDays(double rentDays) {
+        this.rentDays= rentDays;
     }
 
       @Override

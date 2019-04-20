@@ -4,14 +4,14 @@ public class Car extends Entity {
 
     private String model;
     private double mileageAcquisition;
-    private double dayRent;
+    private double daysRent;
 
 
-    public Car(String id, String model, double mileageAcquisition, double dayRent) {
+    public Car(String id, String model, double mileageAcquisition, double daysRent) {
         super(id);
         this.model = model;
         this.mileageAcquisition = mileageAcquisition;
-        this.dayRent = dayRent;
+        this.dayRent = daysRent;
     }
     public String getModel() {
         return model;
@@ -21,10 +21,21 @@ public class Car extends Entity {
         return mileageAcquisitiont;
     }
 
-    public double getDayRent() {
-        return dayRent;
+    public double getDaysRent() {
+        return daysRent;
     }
 
+    public void setDaysRent(double DaysRent) {
+        this.daysRent= daysRent;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setMileageAcquisition(double MileageAcquisition) {
+        this.mileageAcquisition= mileageAcquisition;
+    }
 
       @Override
     public String toString() {
