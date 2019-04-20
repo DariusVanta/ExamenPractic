@@ -20,30 +20,29 @@
                     <PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tableColumnSum" text="Sum">
+            <TableColumn fx:id="tableColumnModel" text="Model">
                 <cellValueFactory>
-                    <PropertyValueFactory property="sum" />
+                    <PropertyValueFactory property="model" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tableColumnDescription" text="Description">
+            <TableColumn fx:id="tableColumnMileageAcquisition" text="MileageAcquisition">
                 <cellValueFactory>
-                    <PropertyValueFactory property="description" />
+                    <PropertyValueFactory property="mileageAcquisition" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tableColumnDate" text="Date">
+            <TableColumn fx:id="tableColumnDaysRent" text="DaysRent">
                 <cellValueFactory>
-                    <PropertyValueFactory property="date" />
+                    <PropertyValueFactory property="daysRent" />
                 </cellValueFactory>
             </TableColumn>
         </columns>
     </TableView>
     <TextField fx:id="txtId" promptText="ID" />
-    <TextField fx:id="txtSum" promptText="Sum" />
-    <TextField fx:id="txtDescription" promptText="Description" />
-    <TextField fx:id="txtDate" promptText="Date" />
-    <Button fx:id="btnAdd" text="Add invoice" onAction="#btnAddClick" />
-    <TextField fx:id="txtSumDay" promptText="Day" />
-    <TextField fx:id="txtSumResult" promptText="Result" editable="false" />
-    <Button fx:id="btnSumForDay" text="Compute sum for given day" onAction="#btnSumForDayClick" />
+    <TextField fx:id="txtModel" promptText="Model" />
+    <TextField fx:id="txtMileageAcquisition" promptText="mileage Acquisition" />
+    <TextField fx:id="txtDaysRent" promptText="Days Rent" />
+    <Button fx:id="btnAddCar" text="Add car" onAction="#btnAddClick" />
+    <TextField fx:id="txtCarMileage" promptText="Result" editable="false" />
+    <Button fx:id="btnSumForDay" text="Compute sum for given day" onAction="#btnMilesPerCarClick" />
 
 </VBox>

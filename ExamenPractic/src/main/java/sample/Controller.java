@@ -20,13 +20,13 @@ public class Controller {
     public TableView tableViewCarss;
     public TableColumn tableColumnId;
     public TableColumn tableColumnModel;
-    public TableColumn tableColumnmileageAcquisition;
+    public TableColumn tableColumnMileageAcquisition;
     public TableColumn tableColumnDaysRent;
     public TextField txtId;
     public TextField txtModel;
     public TextField txtMileageAcquisition;
     public TextField txtDaysRent;
-    public Button btnAdd;
+    public Button btnAddCar;
     public TextField txtCarMileage;
     public TextField txtCarIncomes;
     public TextField txtCarRentDaysResult;
