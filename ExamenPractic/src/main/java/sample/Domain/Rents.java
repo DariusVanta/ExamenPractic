@@ -10,12 +10,12 @@ public class Rents extends Entity {
     public Rents(String id, String carId, double rentDays, double mileage) {
         super(id);
         this.carId = carId;
-        this.mileageAcquisition = mileageAcquisition;
-        this.dayRent = dayRent;
+        this.rentDays = rentDays;
+        this.mileage = mileage;
     }
 
-    public Entity(String idCa) {
-        this.id = id;
+    public Entity(String CarId) {
+        this.carId = CarId;
     }
 
 
@@ -23,33 +23,20 @@ public class Rents extends Entity {
         return model;
     }
 
-    public double getMileageAcquisition() {
-        return mileageAcquisitiont;
+    public double getMileage() {
+        return mileage;
     }
 
-    public double getDayRent() {
-        return dayRent;
+    public double getRentDays() {
+        return RentDays;
     }
-
-
-
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Entity entity = (Entity) o;
-        return Objects.equals(id, entity.id);
-    }
-
 
       @Override
     public String toString() {
         return "Car{" +
-                "model=" + model +
-                "with mileage on Acquisition='" + mileageAcquisition + '\'' +
-                " have a rent per day ='" + dayRent + '\'' +
+                "car ID=" + carId +
+                "rent days='" + rentDays + '\'' +
+                ", mileage ='" + mileage + '\'' +
                 '}';
     }
 }
