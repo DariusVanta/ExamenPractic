@@ -1,5 +1,10 @@
 package sample.Domain;
 
+/**
+ * Validates a rent.
+ * @param car the car to validate.
+ * @throws RuntimeException if there are validation errors.
+ */
 public class Rents extends Entity {
 
     private String carId;
