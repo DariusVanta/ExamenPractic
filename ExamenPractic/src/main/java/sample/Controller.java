@@ -17,66 +17,79 @@ import sample.Service.InvoiceService;
 import sun.security.pkcs11.wrapper.CK_ATTRIBUTE;
 
 public class Controller {
-    public TableView tableViewInvoices;
+    public TableView tableViewCarss;
     public TableColumn tableColumnId;
-    public TableColumn tableColumnSum;
-    public TableColumn tableColumnDescription;
-    public TableColumn tableColumnDate;
+    public TableColumn tableColumnModel;
+    public TableColumn tableColumnmileageAcquisition;
+    public TableColumn tableColumnDaysRent;
     public TextField txtId;
-    public TextField txtSum;
-    public TextField txtDescription;
-    public TextField txtDate;
+    public TextField txtModel;
+    public TextField txtMileageAcquisition;
+    public TextField txtDaysRent;
     public Button btnAdd;
-    public TextField txtSumDay;
-    public TextField txtSumResult;
+    public TextField txtCarMileage;
+    public TextField txtCarIncomes;
+    public TextField txtCarRentDaysResult;
     public Button btnSumForDay;
 
-    private InvoiceService invoiceService;
-    private ObservableList<Invoice> invoices = FXCollections.observableArrayList();
+    private CarService CarService;
+    private ObservableList<Car> cars = FXCollections.observableArrayList();
 
     public void btnAddClick(ActionEvent actionEvent) {
         try {
             String id = txtId.getText();
-            double sum = Double.parseDouble(txtSum.getText());
-            String description = txtDescription.getText();
-            String date = txtDate.getText();
-            invoiceService.add(id, sum, description, date);
+            double mileageAcquisition = Double.parseDouble(txtMileageAcquisition.getText());
+            double daysRent = Double.parseDouble(txtDaysRent.getText());
+            String model = txtDescription.getText();
+
+            carService.add(id, model, mileageAcquisition, daysRent);
 
             txtId.clear();
-            txtSum.clear();
-            txtDescription.clear();
-            txtDate.clear();
+            txtModel.clear();
+            txtMileageAcquisition.clear();
+            txtDaysRent.clear();
 
-            invoices.clear();
-            invoices.addAll(invoiceService.getAll());
+            cars.clear();
+            cars.addAll(carService.getAll());
 
-        } catch (InvoiceDateFormatException idfe) {
+        } catch (CarDateFormatException idfe) {
             Common.showValidationError(idfe.getMessage());
         } catch (RuntimeException rex) {
             Common.showValidationError(rex.getMessage());
         }
     }
 
-    public void setServices(InvoiceService invoiceService) {
-        this.invoiceService = invoiceService;
+    public void setServices(CarService carService) {
+        this.carService = carService;
     }
 
     @FXML
     private void initialize() {
 
         Platform.runLater(() -> {
-            invoices.addAll(invoiceService.getAll());
-            tableViewInvoices.setItems(invoices);
+            cars.addAll(carService.getAll());
+            tableViewCars.setItems(cars);
         });
     }
 
+    public void btnMilesPerCarClick(ActionEvent actionEvent) {
+        try {
+            String model = txtModel.getText();
+            double mileageAcquisition = carService.getMileageAcquisition(double);
+            txtCarMileage.setText(String.valueOf(mileageAcquisition));
+        } catch (CarDateFormatException idfe) {
+            Common.showValidationError(idfe.getMessage());
+        }
+    }
+
+    /*
     public void btnSumForDayClick(ActionEvent actionEvent) {
         try {
             String date = txtSumDay.getText();
             double sum = invoiceService.getDaySum(date);
             txtSumResult.setText(String.valueOf(sum));
-        } catch (InvoiceDateFormatException idfe) {
+        } catch (CarDateFormatException idfe) {
             Common.showValidationError(idfe.getMessage());
         }
-    }
+    }*/
 }
